@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <title>Document</title>
+<style>
+body{
+    margin:0;
+    padding:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    font-family: Poppins, sans-serif;
+}
+
+.container{
+    position:relative;
+    min-height: 300px;
+    width:450px;
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,1);
+}
+.container:before{
+    content: '';
+    position:absolute;
+    top:0;
+    left:0;
+    width:50%;
+    height:100%;
+    background: rgba(255,255,255,0.1);
+    pointer-events:none;
+}
+
+.form{
+    position:absolute;
+    width:100%;
+    height:100%;
+    padding:40px;
+    box-sizing:border-box;
+    z-index:1;
+}
+
+.form h2{
+    margin:0; padding:0; color:#fff; font-size:25px;
+}
+
+.form .inputBox{
+    width:100%; margin-top:20px;
+}
+
+.form .inputBox input {
+    width:100%; background: transparent; border:none; border-bottom:2px solid #fff;
+    outline:none; font-size: 20px; color:#fff; padding:5px 0;
+}
+::placeholder{
+    color:#eee;
+}
+.form .inputBox input[type="submit"]{
+    background: #fff; color:#000; border:none; font-weight: 900;
+    max-width:100px; cursor:pointer;
+}
+.form p{color:#eee};
+.form p a{color:#fff;}
+
+.container:after{
+    content: ''; position:absolute; top:-5px; left:-5px; right:-5px;
+    bottom:-5px; background: linear-gradient(45deG,rgb(255, 3, 3), rgb(10, 255, 10));
+    pointer-events: none; animation: animate 12s linear infinite;
+}
+@keyframes animate{
+    0%{filter:blur(30px) hue-rotate(0deg);}
+    100%{filter:blur(30px) hue-rotate(360deg);}
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="form">
+            <h2>Login Here</h2>
+            <form>
+                <div class="inputBox">
+                    <input type="email" placeholder="email">
+                </div>
+                <div class="inputBox">
+                    <input type="password" placeholder="password">
+                </div>
+                <div class="inputBox">
+                    <input type="submit" value="Login">
+                </div>
+                <p>Forgot Password? &nbsp;<a href="#" style="color:white;">Click Here!</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
